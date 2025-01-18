@@ -1,0 +1,12 @@
+.codegpt
+
+# Ignore env files in both client and server
+client/.env
+server/.env
+
+# Other common ignores
+node_modules/
+dist/
+build/
+*.log
+.DS_Store

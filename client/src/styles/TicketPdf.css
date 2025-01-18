@@ -1,0 +1,41 @@
+/* Add the following CSS for styling the ticket */
+.ticket-container {
+  width: 210mm;
+  height: 297mm;
+  padding: 20mm;
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.ticket-details div {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1a73e8;
+}
+
+h3 {
+  font-size: 24px;
+  color: #1a73e8;
+  margin-bottom: 12px;
+}
+
+button {
+  background-color: #1a73e8;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1558b0;
+}

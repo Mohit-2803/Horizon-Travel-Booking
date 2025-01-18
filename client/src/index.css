@@ -1,0 +1,362 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* index.css or App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures consistent box sizing */
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  border: none; /* Ensure no borders are applied */
+}
+
+.date-picker {
+  width: 100%;
+  padding: 12px 16px; /* Slightly more padding for better spacing */
+  border: 2px solid #6b6c6d; /* Light gray border */
+  border-radius: 8px; /* More rounded corners for a modern look */
+  font-size: 16px; /* Proper font size */
+  background-color: #d2dfed; /* Ensuring a clean white background */
+  color: #333; /* Darker text for better readability */
+  transition: all 0.3s ease; /* Smooth transition for interactions */
+  outline: none;
+}
+
+.date-picker:focus {
+  border-color: #081cc8; /* Change border color on focus */
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3); /* Subtle green shadow on focus */
+}
+
+.date-picker::-webkit-calendar-picker-indicator {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.date-picker::-webkit-input-placeholder {
+  color: #aaa; /* Light gray placeholder text */
+}
+
+/* From Uiverse.io by umerhassaan */
+/* Yoinked from CodePen, but improved the animation
+so that it is smooth among other more minor things */
+
+.booking_btn {
+  display: block;
+  cursor: pointer;
+  color: white;
+  margin: 0 auto;
+  position: relative;
+  text-decoration: none;
+  font-weight: 60;
+  border-radius: 100px;
+  overflow: hidden;
+  padding: 2px;
+  isolation: isolate;
+  width: 10rem;
+}
+
+.booking_btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  background: linear-gradient(115deg, #d1d1d1, #02367b, #a7bfde);
+  background-size: 25% 100%;
+  animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop
+    1.5s linear infinite;
+  animation-play-state: running;
+  translate: -5% 0%;
+  transition: translate 0.25s ease-out;
+}
+
+.booking_btn:hover::before {
+  animation-play-state: running;
+  transition-duration: 0.75s;
+  translate: 0% 0%;
+}
+
+@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+.booking_btn span {
+  position: relative;
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  background: #02367b;
+  border-radius: 100px;
+  height: 100%;
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  .booking_btn {
+    width: 8rem; /* Adjust width for smaller screens */
+  }
+
+  .booking_btn span {
+    font-size: 0.9rem; /* Adjust font size for readability */
+    padding: 0.75rem 1rem; /* Adjust padding */
+  }
+}
+
+/* From Uiverse.io by css.payment_btns-io */
+.get_started_btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #a9a8a8;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  font-size: 19px;
+  cursor: pointer;
+  color: white;
+  z-index: 1;
+}
+
+.get_started_btn:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.get_started_btn:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #39bda7;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.get_started_btn:hover {
+  color: #ffffff;
+  border: 1px solid #39bda7;
+}
+
+.get_started_btn:hover:before {
+  top: -35%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.get_started_btn:hover:after {
+  top: -45%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/* From Uiverse.io by ElSombrero2 */
+.features_card {
+  position: relative;
+  background-color: #2c2c2c; /* Black background */
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.3);
+  overflow: hidden; /* Ensures the light effect does not overflow the card */
+}
+
+.features_card .content:hover {
+  border-radius: 20px;
+}
+
+.features_card:hover::before {
+  opacity: 0; /* Remove light effect on hover */
+}
+
+.features_card .content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #fff; /* White text on black background */
+}
+
+.features_card h3 {
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+
+.features_card p {
+  color: #ccc;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .features_card {
+    margin-bottom: 16px; /* Space between cards on mobile */
+  }
+
+  .features_card .content {
+    padding: 15px; /* Reduce padding on mobile */
+  }
+
+  .features_card h3 {
+    font-size: 18px; /* Smaller font size for headings on mobile */
+  }
+
+  .features_card p {
+    font-size: 14px; /* Smaller font size for paragraphs on mobile */
+  }
+
+  /* Adjust the layout to stack cards vertically */
+  .featuresSection .flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* Reduce gap between cards */
+  }
+}
+
+/* For smaller screens, like mobile phones in portrait mode */
+@media (max-width: 480px) {
+  .features_card h3 {
+    font-size: 16px; /* Even smaller heading font for very small screens */
+  }
+
+  .features_card p {
+    font-size: 12px; /* Smaller paragraph text for small screens */
+  }
+}
+
+/* From Uiverse.io by css.payment_btns-io */
+.search_btn {
+  display: inline-block;
+  padding: 0px 24px;
+  border: 2px solid #4f4f4f;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  font-size: 19px;
+  cursor: pointer;
+  color: black;
+  z-index: 1;
+}
+
+.search_btn:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.search_btn:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #1518b2;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.search_btn:hover {
+  color: #ffffff;
+  border: 1px solid #1518b2;
+}
+
+.search_btn:hover:before {
+  top: -35%;
+  background-color: #1518b2;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.search_btn:hover:after {
+  top: -45%;
+  background-color: #1518b2;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/* From Uiverse.io by Ali-Tahmazi99 */
+/* From uiverse.io by @Ali-Tahmazi99 */
+.payment_btn {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #03045e;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+}
+
+.payment_btn::before,
+.payment_btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.payment_btn::before {
+  left: -10px;
+  background: #240046;
+}
+
+.payment_btn::after {
+  right: -10px;
+  background: #5a189a;
+}
+
+.payment_btn:hover::before,
+.payment_btn:hover::after {
+  width: 58%;
+}
+
+.payment_btn:hover span {
+  color: #e0aaff;
+  transition: 0.3s;
+}
+
+.payment_btn span {
+  color: #03045e;
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+}

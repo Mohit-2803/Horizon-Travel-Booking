@@ -1,0 +1,76 @@
+/* General navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #e89005;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar links */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 1001;
+}
+
+.sidebar .navLink {
+  display: block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #333; /* Dark color for visibility */
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.sidebar .navLink:hover {
+  background-color: #e89005;
+  color: #fff;
+}
+
+/* Mobile dropdown menu */
+.mobile-dropdown-menu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  width: 100%;
+  z-index: 1002;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #e89005;
+  color: #fff;
+}
+
+.dropdown-icon {
+  font-size: 18px;
+  color: #e89005;
+}
+
+/* Add more styles as needed for other parts of the navbar... */
