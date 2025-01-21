@@ -45,7 +45,7 @@ app.use((req, res, next) => {
     );
     res.header(
       "Access-Control-Allow-Origin",
-      "https://horizon-omega-seven.vercel.app"
+      "https://horizon-blue-nu.vercel.app"
     ); // Your frontend URL here
     res.sendStatus(204); // Send 204 No Content as the response
   } else {
@@ -56,7 +56,7 @@ app.use((req, res, next) => {
 // CORS configuration for handling actual requests
 app.use(
   cors({
-    origin: "https://horizon-blue-nu.vercel.app/", // Allow only your frontend domain to make requests
+    origin: "https://horizon-blue-nu.vercel.app", // Allow only your frontend domain to make requests
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: [
       "Content-Type",
