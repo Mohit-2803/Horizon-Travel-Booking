@@ -56,7 +56,7 @@ app.use((req, res, next) => {
 // CORS configuration for handling actual requests
 app.use(
   cors({
-    origin: "https://horizon-omega-seven.vercel.app", // Allow only your frontend domain to make requests
+    origin: process.env.FRONTEND_URL, // Allow only your frontend domain to make requests
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: [
       "Content-Type",

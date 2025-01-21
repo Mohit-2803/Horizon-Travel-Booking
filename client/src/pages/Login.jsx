@@ -61,12 +61,7 @@ const Login = () => {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/api/auth/login`,
-        formData,
-        {
-          headers: {
-            "ngrok-skip-browser-warning": "69420", // Include this header
-          },
-        }
+        formData
       );
 
       const { token, userId, isAdmin, message } = response.data;
