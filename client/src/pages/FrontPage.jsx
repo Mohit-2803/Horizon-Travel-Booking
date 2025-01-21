@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 import { isMobile } from "react-device-detect";
-import { text } from "@fortawesome/fontawesome-svg-core";
+import busImage from "../assets/bus.jpg";
 
 const FrontPage = () => {
   // Check and remove "bookedTicket" token if it exists
@@ -26,10 +26,8 @@ const FrontPage = () => {
           prevImage ===
           "https://images3.alphacoders.com/299/thumb-1920-29909.jpg"
         ) {
-          return "https://wallpapercave.com/wp/wp12516713.jpg"; // Second image
-        } else if (
-          prevImage === "https://wallpapercave.com/wp/wp12516713.jpg"
-        ) {
+          return busImage; // Second image
+        } else if (prevImage === busImage) {
           return "https://i.pinimg.com/originals/5a/dc/f1/5adcf19cdea4d0e737be886dfe19d6b9.jpg"; // Third image
         } else {
           return "https://images3.alphacoders.com/299/thumb-1920-29909.jpg"; // First image again
