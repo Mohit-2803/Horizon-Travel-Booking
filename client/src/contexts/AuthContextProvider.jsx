@@ -26,7 +26,6 @@ export const AuthProvider = ({ children }) => {
             {
               headers: {
                 Authorization: `Bearer ${token}`,
-                "ngrok-skip-browser-warning": "69420",
               },
             }
           );

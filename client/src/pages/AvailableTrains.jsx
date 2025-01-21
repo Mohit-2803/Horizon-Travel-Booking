@@ -85,7 +85,6 @@ const AvailableTrains = ({ searchParams }) => {
         },
         headers: {
           Authorization: `Bearer ${token}`,
-          "ngrok-skip-browser-warning": "69420",
         },
       })
       .then((response) => {

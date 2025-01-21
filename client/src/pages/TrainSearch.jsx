@@ -33,7 +33,6 @@ const TrainSearch = ({ onSearch }) => {
           {
             headers: {
               Authorization: `Bearer ${token}`,
-              "ngrok-skip-browser-warning": "69420",
             },
           }
         );
