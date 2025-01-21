@@ -31,6 +31,7 @@ connectDB();
 // Middleware for parsing cookies
 app.use(cookieParser());
 
+// Pre-flight handling for CORS
 app.use((req, res, next) => {
   if (req.method === "OPTIONS") {
     // Allow pre-flight requests to go through
@@ -40,9 +41,12 @@ app.use((req, res, next) => {
     );
     res.header(
       "Access-Control-Allow-Headers",
-      "Content-Type, Authorization, ngrok-skip-browser-warning" // Allow ngrok header
+      "Content-Type, Authorization, ngrok-skip-browser-warning"
     );
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Origin",
+      "https://horizon-omega-seven.vercel.app"
+    ); // Your frontend URL here
     res.sendStatus(204); // Send 204 No Content as the response
   } else {
     next(); // Pass non-OPTIONS requests to the next handler
@@ -52,14 +56,14 @@ app.use((req, res, next) => {
 // CORS configuration for handling actual requests
 app.use(
   cors({
-    origin: "*", // Allow all origins for testing
+    origin: "https://horizon-omega-seven.vercel.app", // Allow only your frontend domain to make requests
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: [
       "Content-Type",
       "Authorization",
       "ngrok-skip-browser-warning",
-    ], // Add this header
-    credentials: true, // If cookies are being used
+    ], // Add ngrok header or any other custom header you might need
+    credentials: true, // If cookies are being used (e.g., session cookies or JWT)
   })
 );
 
