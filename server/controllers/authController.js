@@ -88,13 +88,6 @@ export const signup = async (req, res) => {
       <p style="font-size: 14px; color: #999999; margin-top: 20px;">Horizon Booking, 123 Main Street, City, Country</p>
     </div>
   `,
-      attachments: [
-        {
-          filename: "logo.svg",
-          path: "C:UserspersoProgrammingBooking-Systemassetslogo.svg", // Update with the correct path to the logo file
-          cid: "ticket_booking_logo", // This CID will be used in the <img> tag
-        },
-      ],
     };
 
     try {
